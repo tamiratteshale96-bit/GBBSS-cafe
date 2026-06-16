@@ -198,47 +198,88 @@
             color: var(--dark-color);
         }
 
-        /* --- 4. GALLERY SECTION --- */
+        /* --- 4. GALLERY TABS SECTION (UPDATED) --- */
         #gallery {
             background-color: #fff;
             max-width: 100%;
         }
 
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 30px;
+        .tab-container {
+            max-width: 600px;
+            margin: 30px auto 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border: 1px solid rgba(74, 51, 25, 0.1);
         }
 
-        .gallery-item {
-            position: relative;
-            width: 350px;
-            height: 250px;
+        .tab-buttons {
+            display: flex;
+            background-color: var(--primary-color);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px 10px;
+            border: none;
+            outline: none;
+            background: none;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .tab-btn:hover {
+            background-color: rgba(212, 163, 115, 0.2);
+        }
+
+        .tab-btn.active {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-title-above {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .tab-image-wrapper {
+            width: 100%;
+            height: 350px;
             overflow: hidden;
             border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
-        .gallery-item img {
+        .tab-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
+        .tab-image-wrapper:hover img {
+            transform: scale(1.05);
         }
 
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            background: rgba(40, 28, 16, 0.8);
-            color: #fff;
-            width: 100%;
-            padding: 10px;
-            font-weight: 500;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- 5. STAFF SECTION --- */
@@ -298,95 +339,24 @@
             text-decoration: none;
         }
 
-        /* --- 7. FOOTER --- */
-        footer {
-            background-color: var(--dark-color);
-            color: #bbb;
-            padding: 40px 20px 20px;
-            font-size: 0.95rem;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 30px;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .footer-child {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .footer-child h4 {
-            color: #fff;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .footer-child ul {
-            list-style: none;
-        }
-
-        .footer-child ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-child ul li a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-child ul li a:hover {
-            color: var(--secondary-color);
-        }
-
-        .social-icons a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.1);
-            padding: 8px 12px;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: var(--secondary-color);
-            color: var(--dark-color);
-        }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            width: 100%;
-        }
-
-        /* --- FIXED RESPONSIVE DESIGN (FOR PHONES & TABLETS) --- */
+        /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 850px) {
             header {
-                flex-direction: column; /* Stacks logo above the links on phone layout */
+                flex-direction: column;
                 padding: 15px 10px;
                 text-align: center;
             }
 
             .logo {
                 margin-bottom: 12px;
-                font-size: 1.1rem; /* Marginally smaller font to fit small mobile screens */
-                white-space: normal; /* Allows text wrap nicely on phones */
+                font-size: 1.1rem;
+                white-space: normal;
             }
 
             .nav-menu {
                 width: 100%;
                 justify-content: center;
-                flex-wrap: wrap; /* Stays clean even if links run out of room */
+                flex-wrap: wrap;
                 gap: 5px;
             }
 
@@ -396,7 +366,7 @@
             }
 
             section {
-                padding: 160px 15px 60px; /* Gives extra clearance at top for stacked mobile header */
+                padding: 160px 15px 60px;
             }
 
             #home h1 {
@@ -407,16 +377,18 @@
                 font-size: 1.1rem;
             }
 
-            .footer-container {
-                text-align: center;
+            .tab-buttons {
                 flex-direction: column;
+            }
+            
+            .tab-image-wrapper {
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. NAVIGATION MENU -->
     <header>
         <a href="#home" class="logo">☕ ጋ/ባ/አ/ሁ/ደ/ት/ቤት ዋሴ ካፌ🇪🇹 (GBBSS cafe of wase)</a>
         <ul class="nav-menu">
@@ -429,42 +401,33 @@
         </ul>
     </header>
 
-    <!-- 1. HOME SECTION -->
     <section id="home">
         <h1>Welcome to Café of Wase</h1>
         <p>የደከመው መንፈስዎ እንዲታደስ፣ ዛሬውኑ ዋሴ ካፌ ጎራ ብለው ጥሩ መዓዛ ባለው ቡናችን ይዝናኑ።</p>
         <a href="#menu" class="btn-order">Order Now</a>
     </section>
 
-    <!-- 2. ABOUT US SECTION(ስለ እኛ) -->
     <section id="about">
         <h2>About Us</h2>
-        <p><h1>ወደ ዋሴ ካፌ እንኳን በደህና መጡ!</h1>
-
-​ዋሴ ካፌ ጥራት ያለው የኢትዮጵያ ቡና ከዘመናዊ እና ምቹ መስተንግዶ ጋር አዋህዶ ለደንበኞቹ የሚያቀርብ የሰላምና የደስታ ቦታ ነው። እኛ ጋር ቡና መጠጣት ብቻ ሳይሆን፣ የማይረሱ ትዝታዎችን መፍጠርም ጭምር ነው።
-
-<br>​ራዕያችን (Our Vision)
-
-​የአገራችንን የቡና ባህልና እሴት በጠበቀ መልኩ፣ በዘመናዊ አቀራረብ እያንዳንዱ ደንበኛችን የሚወደውንና ጥራቱን የጠበቀ ምርትና አገልግሎት በማቅረብ ቀዳሚና ተመራጭ ካፌ መሆን።
-
-<br>​ተልዕኳችን (Our Mission)
-
-​ጥራት: በጥንቃቄ የተመረጡና የተቆሉ ምርጥ የኢትዮጵያ የቡና ፍሬዎችን በመጠቀም ሁልጊዜም ፍጹም ጣዕም ያለው ቡና ማቅረብ።
-
-​መስተንግዶ: ደንበኞቻችን ልክ እንደ ቤታቸው ነጻነትና ሰላም እንዲሰማቸው የሚያደርግ ፈጣንና ፍቅራዊ መስተንግዶ መስጠት።
-
-​አካባቢ: ለስራ፣ ለንባብ፣ ከጓደኞች ጋር ለመጨዋወት ወይም ለብቻዎ ዘና ለማለት የሚሆን ምቹ፣ ጸጥ ያለና ማራኪ ከባቢ መፍጠር።
-
-</p>
+        <div style="padding: 20px;">
+            <h1>ወደ ዋሴ ካፌ እንኳን በደህና መጡ!</h1>
+            <p>ዋሴ ካፌ ጥራት ያለው የኢትዮጵያ ቡና ከዘመናዊ እና ምቹ መስተንግዶ ጋር አዋህዶ ለደንበኞቹ የሚያቀርብ የሰላምና የደስታ ቦታ ነው። እኛ ጋር ቡና መጠጣት ብቻ ሳይሆን፣ የማይረሱ ትዝታዎችን መፍጠርም ጭምር ነው።</p>
+            <br>
+            <h3>ራዕያችን (Our Vision)</h3>
+            <p>የአገራችንን የቡና ባህልና እሴት በጠበቀ መልኩ፣ በዘመናዊ አቀራረብ እያንዳንዱ ደንበኛችን የሚወደውንና ጥራቱን የጠበቀ ምርትና አገልግሎት በማቅረብ ቀዳሚና ተመራጭ ካፌ መሆን።</p>
+            <br>
+            <h3>ተልዕኳችን (Our Mission)</h3>
+            <p><strong>ጥራት:</strong> በጥንቃቄ የተመረጡና የተቆሉ ምርጥ የኢትዮጵያ የቡና ፍሬዎችን በመጠቀም ሁልጊዜም ፍጹም ጣዕም ያለው ቡና ማቅረብ።</p>
+            <p><strong>መስተንግዶ:</strong> ደንበኞቻችን ልክ እንደ ቤታቸው ነጻነትና ሰላም እንዲሰማቸው የሚያደርግ ፈጣንና ፍቅራዊ መስተንግዶ መስጠት።</p>
+            <p><strong>አካባቢ:</strong> ለስራ፣ ለንባብ፣ ከጓደኞች ጋር ለመጨዋወት ወይም ለብቻዎ ዘና ለማለት የሚሆን ምቹ፣ ጸጥ ያለና ማራኪ ከባቢ መፍጠር።</p>
+        </div>
     </section>
 
-    <!-- 3. MENU SECTION -->
     <section id="menu">
         <h2>Our Delicious Menu</h2>
         <p>Freshly prepared items made daily from premium, locally sourced ingredients.</p>
         
         <div class="grid-container">
-            <!-- Coffee -->
             <div class="menu-item">
                 <img src="SHAY.jpg" alt="Freshly brewed coffee">
                 <div class="menu-text">
@@ -473,7 +436,6 @@
                 </div>
             </div>
 
-            <!-- Tea -->
             <div class="menu-item">
                 <img src="BUNNA.jpeg" alt="Steaming cup of herbal tea">
                 <div class="menu-text">
@@ -482,7 +444,6 @@
                 </div>
             </div>
 
-            <!-- Chips -->
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500" alt="Crispy french fries">
                 <div class="menu-text">
@@ -491,7 +452,6 @@
                 </div>
             </div>
 
-            <!-- Avocado -->
             <div class="menu-item">
                 <img src="WOTT.jpg" alt="Avocado Toast">
                 <div class="menu-text">
@@ -500,7 +460,6 @@
                 </div>
             </div>
 
-            <!-- Injera and Wott -->
             <div class="menu-item">
                 <img src="kokor.jpeg" alt="Injera and Wott">
                 <div class="menu-text">
@@ -509,7 +468,6 @@
                 </div>
             </div>
 
-            <!-- Soft Drinks -->
             <div class="menu-item">
                 <img src="2.jpeg" alt="Chilled soft drink">
                 <div class="menu-text">
@@ -520,208 +478,124 @@
         </div>
     </section>
 
-    <!-- 4. GALLERY SECTION -->
     <section id="gallery">
         <h2>Life at the Café</h2>
-        <p>“በዋሴ ካፌ ፍቅር በኩባያ ይቀርባል!”<br><br>“እዚህ ዋሴ ካፌ ውስጥ እያንዳንዱ ደንበኛችን እንግዳ ሳይሆን የቤተሰባችን አካል ነው።”<br><br>“ጥሩ ቀን የሚጀምረው በዋሴ ጥሩ ቡና ነው”</p>
+        <p>“በዋሴ ካፌ ፍቅር በኩባያ ይቀርባል!”<br>“እዚህ ዋሴ ካፌ ውስጥ እያንዳንዱ ደንበኛችን እንግዳ ሳይሆን የቤተሰባችን አካል ነው።”<br>“ጥሩ ቀን የሚጀምረው በዋሴ ጥሩ ቡና ነው”</p>
         
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="FIT.jpg" alt="Cafe extrior design">
-                <div class="gallery-caption">extrior Design</div>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="openTab(event, 'exterior')">Exterior Design</button>
+                <button class="tab-btn" onclick="openTab(event, 'seating')">Customer Seating</button>
+                <button class="tab-btn" onclick="openTab(event, 'events')">Live Events</button>
             </div>
-            <div class="gallery-item">
-                <img src="TT.jpg"  enjoying seating">
-                <div class="gallery-caption">Customer Seating</div>
+
+            <div id="exterior" class="tab-content active">
+                <div class="tab-title-above">Exterior Design</div>
+                <div class="tab-image-wrapper">
+                    <img src="FIT.jpg" alt="Cafe exterior design">
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="SS.jpg" alt="Special events at cafe">
-                <div class="gallery-caption">Live Acoustic Events</div>
+
+            <div id="seating" class="tab-content">
+                <div class="tab-title-above">Customer Seating</div>
+                <div class="tab-image-wrapper">
+                    <img src="TT.jpg" alt="Customer seating area">
+                </div>
+            </div>
+
+            <div id="events" class="tab-content">
+                <div class="tab-title-above">Live Acoustic Events</div>
+                <div class="tab-image-wrapper">
+                    <img src="SS.jpg" alt="Special events at cafe">
+                </div>
             </div>
         </div>
     </section>
 
-   <!-- 5. STAFF/TEAM SECTION -->
-<section id="team">
-    <h2>Meet Our Team</h2>
+   <section id="team">
+        <h2>Meet Our Team</h2>
+        <p>The talented hands and smiling faces that make your experience unforgettable.</p>
 
-    <p>
-        The talented hands and smiling faces that make your experience unforgettable.
-    </p>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="5.jpeg" alt="General Manager">
+                <h3>ዋሲሁን ታደለ</h3>
+                <p>General Manager</p>
+                <p style="font-size:0.85rem; margin-top:5px;">Keeping everything running smoothly with a bright smile.</p>
+            </div>
 
-    <div class="team-grid">
+            <div class="team-member">
+                <img src="4.jpeg" alt="Head Chef">
+                <h3>ጌጠ መኮንን</h3>
+                <p>Head Chef</p>
+                <p style="font-size:0.85rem; margin-top:5px;">Culinary mastermind behind our signature stews and pastries.</p>
+            </div>
 
-        <!-- Manager -->
-        <div class="team-member">
-            <img src="5.jpeg" alt="General Manager">
+            <div class="team-member">
+                <img src="4.jpeg" alt="Lead Waiter">
+                <h3>ኤፍራታ ግርማ</h3>
+                <p>Lead Barista / Waiter</p>
+                <p style="font-size:0.85rem; margin-top:5px;">Crafting perfect latte art patterns and delivering warmth.</p>
+            </div>
+        </div>
+    </section>
 
-            <h3>ዋሲሁን ታደለ</h3>
+    <section id="contact">
+        <h2>Order From Wase Cafe</h2>
+        <p>Place your food or drink order easily from your table. Fast service • Fresh food • Warm coffee ☕</p>
 
-            <p>General Manager</p>
-
-            <p style="font-size:0.85rem; margin-top:5px;">
-                Keeping everything running smoothly with a bright smile.
-            </p>
+        <div class="contact-info">
+            <p>📞 Phone: <a href="tel:+251975367823">+251975367823</a></p>
+            <p>✉️ Email: <a href="mailto:hello@cafewase.com">hello@cafewase.com</a></p>
         </div>
 
-        <!-- Chef -->
-        <div class="team-member">
-            <img src="4.jpeg" alt="Head Chef">
+        <div style="max-width:500px; margin:30px auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.2); text-align:left;">
+            <form>
+                <label style="color:#333; font-weight:bold;">Customer Name</label><br>
+                <input type="text" placeholder="Enter your name" style="width:100%; padding:10px; margin-top:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;">
 
-            <h3>ጌጠ መኮንን</h3>
+                <label style="color:#333; font-weight:bold;">Phone Number</label><br>
+                <input type="tel" placeholder="Enter your phone number" style="width:100%; padding:10px; margin-top:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;">
 
-            <p>Head Chef</p>
+                <label style="color:#333; font-weight:bold;">Table Number</label><br>
+                <input type="number" placeholder="Enter your table number" style="width:100%; padding:10px; margin-top:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;">
 
-            <p style="font-size:0.85rem; margin-top:5px;">
-                Culinary mastermind behind our signature stews and pastries.
-            </p>
+                <label style="color:#333; font-weight:bold;">Menu Items</label><br>
+                <select style="width:100%; padding:10px; margin-top:8px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;">
+                    <option>Coffee - 20 Birr</option>
+                    <option>Spiced Tea - 10 Birr</option>
+                    <option>Hand-Cut Chips - 15 Birr</option>
+                    <option>Soft Drink - 65 Birr</option>
+                    <option>Injera and Wot - 100 Birr</option>
+                    <option>Kokor - 20 Birr</option>
+                </select>
+
+                <label style="color:#333; font-weight:bold;">Quantity</label><br>
+                <input type="number" placeholder="Enter quantity" style="width:100%; padding:10px; margin-top:8px; margin-bottom:20px; border:1px solid #ccc; border-radius:5px;">
+
+                <button type="submit" style="width:100%; background:#d4a373; color:#281c10; padding:12px; border:none; border-radius:5px; font-size:16px; font-weight:bold; cursor:pointer;">
+                    Place Order
+                </button>
+            </form>
         </div>
+    </section>
 
-        <!-- Waiter -->
-        <div class="team-member">
-            <img src="4.jpeg" alt="Lead Waiter">
-
-            <h3>ኤፍራታ ግርማ</h3>
-
-            <p>Lead Barista / Waiter</p>
-
-            <p style="font-size:0.85rem; margin-top:5px;">
-                Crafting perfect latte art patterns and delivering warmth.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-    <!-- 6. CONTACT & ORDER SECTION -->
-<section id="contact">
-    <h2>Order From Wase Cafe</h2>
-
-    <p>
-        Place your food or drink order easily from your table.
-        Fast service • Fresh food • Warm coffee ☕
-    </p>
-
-    <div class="contact-info">
-        <p>📞 Phone: <a href="tel:+251975367823">+251975367823</a></p>
-        <p>✉️ Email: <a href="mailto:hello@cafewase.com">hello@cafewase.com</a></p>
-    </div>
-
-    <!-- ORDER FORM -->
-    <div style="
-        max-width:500px;
-        margin:30px auto;
-        background:#fff;
-        padding:25px;
-        border-radius:12px;
-        box-shadow:0 0 10px rgba(0,0,0,0.2);
-        text-align:left;
-    ">
-
-        <form>
-
-            <label style="color:#333; font-weight:bold;">
-                Customer Name
-            </label><br>
-
-            <input type="text"
-                   placeholder="Enter your name"
-                   style="
-                   width:100%;
-                   padding:10px;
-                   margin-top:8px;
-                   margin-bottom:15px;
-                   border:1px solid #ccc;
-                   border-radius:5px;
-                   ">
-
-            <label style="color:#333; font-weight:bold;">
-                Phone Number
-            </label><br>
-
-            <input type="tel"
-                   placeholder="Enter your phone number"
-                   style="
-                   width:100%;
-                   padding:10px;
-                   margin-top:8px;
-                   margin-bottom:15px;
-                   border:1px solid #ccc;
-                   border-radius:5px;
-                   ">
-
-            <label style="color:#333; font-weight:bold;">
-                Table Number
-            </label><br>
-
-            <input type="number"
-                   placeholder="Enter your table number"
-                   style="
-                   width:100%;
-                   padding:10px;
-                   margin-top:8px;
-                   margin-bottom:15px;
-                   border:1px solid #ccc;
-                   border-radius:5px;
-                   ">
-
-            <label style="color:#333; font-weight:bold;">
-                Menu Items
-            </label><br>
-
-            <select style="
-                    width:100%;
-                    padding:10px;
-                    margin-top:8px;
-                    margin-bottom:15px;
-                    border:1px solid #ccc;
-                    border-radius:5px;
-                    ">
-
-                <option>Coffee - 20 Birr</option>
-                <option>Spiced Tea - 10 Birr</option>
-                <option>Hand-Cut Chips - 15 Birr</option>
-                <option>Soft Drink - 65 Birr</option>
-                <option>Injera and Wot - 100 Birr</option>
-                <option>Kokor - 20 Birr</option>
-
-            </select>
-
-            <label style="color:#333; font-weight:bold;">
-                Quantity
-            </label><br>
-
-            <input type="number"
-                   placeholder="Enter quantity"
-                   style="
-                   width:100%;
-                   padding:10px;
-                   margin-top:8px;
-                   margin-bottom:20px;
-                   border:1px solid #ccc;
-                   border-radius:5px;
-                   ">
-
-            <button type="submit"
-                    style="
-                    width:100%;
-                    background:#d4a373;
-                    color:#281c10;
-                    padding:12px;
-                    border:none;
-                    border-radius:5px;
-                    font-size:16px;
-                    font-weight:bold;
-                    cursor:pointer;
-                    ">
-                Place Order
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
