@@ -102,7 +102,7 @@
         /* --- HOME (HERO) SECTION --- */
         #home {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('0.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -198,7 +198,7 @@
             color: var(--dark-color);
         }
 
-        /* --- 4. GALLERY TABS SECTION (UPDATED) --- */
+        /* --- 4. GALLERY TABS SECTION --- */
         #gallery {
             background-color: #fff;
             max-width: 100%;
@@ -389,6 +389,7 @@
 </head>
 <body>
 
+    <!-- 1. NAVIGATION MENU -->
     <header>
         <a href="#home" class="logo">☕ ጋ/ባ/አ/ሁ/ደ/ት/ቤት ዋሴ ካፌ🇪🇹 (GBBSS cafe of wase)</a>
         <ul class="nav-menu">
@@ -401,12 +402,14 @@
         </ul>
     </header>
 
+    <!-- 1. HOME SECTION -->
     <section id="home">
         <h1>Welcome to Café of Wase</h1>
-        <p>የደከመው መንፈስዎ እንዲታደስ፣ ዛሬውኑ ዋሴ ካፌ ጎራ ብለው ጥሩ መዓዛ ባለው ቡናችን ይዝናኑ።</p>
+        <p>የደከመው መንፈስዎ እንዲታደስ፣ ዛሬውኑ ዋሴ ካፌ ጎራ ብለው ጥሩ መዓዛ ባለው ቡናችን ይዝናኑ。</p>
         <a href="#menu" class="btn-order">Order Now</a>
     </section>
 
+    <!-- 2. ABOUT US SECTION -->
     <section id="about">
         <h2>About Us</h2>
         <div style="padding: 20px;">
@@ -414,36 +417,40 @@
             <p>ዋሴ ካፌ ጥራት ያለው የኢትዮጵያ ቡና ከዘመናዊ እና ምቹ መስተንግዶ ጋር አዋህዶ ለደንበኞቹ የሚያቀርብ የሰላምና የደስታ ቦታ ነው። እኛ ጋር ቡና መጠጣት ብቻ ሳይሆን፣ የማይረሱ ትዝታዎችን መፍጠርም ጭምር ነው።</p>
             <br>
             <h3>ራዕያችን (Our Vision)</h3>
-            <p>የአገራችንን የቡና ባህልና እሴት በጠበቀ መልኩ፣ በዘመናዊ አቀራረብ እያንዳንዱ ደንበኛችን የሚወደውንና ጥራቱን የጠበቀ ምርትና አገልግሎት በማቅረብ ቀዳሚና ተመራጭ ካፌ መሆን።</p>
+            <p>የአገራችንን የቡና ባህልና እሴት በጠበቀ መልኩ፣ በዘመናዊ አቀራረብ እያንዳንዱ ደንበኛችን የሚወደውንና ጥራቱን የጠበቀ ምርትና አገልግሎት በማቅረብ ቀዳሚና ተመራጭ ካፌ መሆን。</p>
             <br>
             <h3>ተልዕኳችን (Our Mission)</h3>
-            <p><strong>ጥራት:</strong> በጥንቃቄ የተመረጡና የተቆሉ ምርጥ የኢትዮጵያ የቡና ፍሬዎችን በመጠቀም ሁልጊዜም ፍጹም ጣዕም ያለው ቡና ማቅረብ።</p>
-            <p><strong>መስተንግዶ:</strong> ደንበኞቻችን ልክ እንደ ቤታቸው ነጻነትና ሰላም እንዲሰማቸው የሚያደርግ ፈጣንና ፍቅራዊ መስተንግዶ መስጠት።</p>
-            <p><strong>አካባቢ:</strong> ለስራ፣ ለንባብ፣ ከጓደኞች ጋር ለመጨዋወት ወይም ለብቻዎ ዘና ለማለት የሚሆን ምቹ፣ ጸጥ ያለና ማራኪ ከባቢ መፍጠር።</p>
+            <p><strong>ጥራት:</strong> በጥንቃቄ የተመረጡና የተቆሉ ምርጥ የኢትዮጵያ የቡና ፍሬዎችን በመጠቀም ሁልጊዜም ፍጹም ጣዕም ያለው ቡና ማቅረብ。</p>
+            <p><strong>መስተንግዶ:</strong> ደንበኞቻችን ልክ እንደ ቤታቸው ነጻነትና ሰላም እንዲሰማቸው የሚያደርግ ፈጣንና ፍቅራዊ መስተንግዶ መስጠት。</p>
+            <p><strong>አካባቢ:</strong> ለስራ፣ ለንባብ፣ ከጓደኞች ጋር ለመጨዋወት ወይም ለብቻዎ ዘና ለማለት የሚሆን ምቹ፣ ጸጥ ያለና ማራኪ ከባቢ መፍጠር。</p>
         </div>
     </section>
 
+    <!-- 3. MENU SECTION -->
     <section id="menu">
         <h2>Our Delicious Menu</h2>
         <p>Freshly prepared items made daily from premium, locally sourced ingredients.</p>
         
         <div class="grid-container">
+            <!-- Coffee -->
             <div class="menu-item">
-                <img src="SHAY.jpg" alt="Freshly brewed coffee">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500" alt="Freshly brewed coffee">
                 <div class="menu-text">
                     <h3>Coffee <span>20 birr</span></h3>
-                    <p>የዋሴን ቡና መጥታችሁ ከጠጣችሁ የምን እንቅልፍ መጥታችሁ በደንብ ጠጡ።</p>
+                    <p>የዋሴን ቡና መጥታችሁ ከጠጣችሁ የምን እንቅልፍ መጥታችሁ በደንብ ጠጡ。</p>
                 </div>
             </div>
 
+            <!-- Tea -->
             <div class="menu-item">
-                <img src="BUNNA.jpeg" alt="Steaming cup of herbal tea">
+                <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500" alt="Steaming cup of herbal tea">
                 <div class="menu-text">
                     <h3>Spiced Tea <span>10 birr 🇪🇹</span></h3>
-                    <p>የዋሴን ሻይ መጥታችሁ ከጠጣችሁ የምን መጠማት መጥታችሁ በደንብ ጠጡ።</p>
+                    <p>የዋሴን ሻይ መጥታችሁ ከጠጣችሁ የምን መጠማት መጥታችሁ በደንብ ጠጡ。</p>
                 </div>
             </div>
 
+            <!-- Chips -->
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500" alt="Crispy french fries">
                 <div class="menu-text">
@@ -452,24 +459,27 @@
                 </div>
             </div>
 
+            <!-- Avocado -->
             <div class="menu-item">
-                <img src="WOTT.jpg" alt="Avocado Toast">
+                <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=500" alt="Avocado Dish">
                 <div class="menu-text">
                     <h3>እንጀራና ወጥ <span>100 birr</span></h3>
                     <p>በዋሴ ካፌ የሚዘጋጀው ልዩ እና ትኩስ እንጀራና ወጥ የሁልጊዜ ምርጫዎ ይሆናል።</p>
                 </div>
             </div>
 
+            <!-- Injera and Wott -->
             <div class="menu-item">
-                <img src="kokor.jpeg" alt="Injera and Wott">
+                <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=500" alt="Traditional Food">
                 <div class="menu-text">
                     <h3>kokor <span>20 birr</span></h3>
                     <p>በዋሴ ካፌ የሚዘጋጀው ልዩ እና ትኩስ እንጀራና ወጥ የሁልጊዜ ምርጫዎ ይሆናል።</p>
                 </div>
             </div>
 
+            <!-- Soft Drinks -->
             <div class="menu-item">
-                <img src="2.jpeg" alt="Chilled soft drink">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500" alt="Chilled soft drink">
                 <div class="menu-text">
                     <h3>Soft Drinks <span>65 birr</span></h3>
                     <p>ዋሴ ካፌ፦ ንጹህ መጠጥ፣ እውነተኛ መስተንግዶ!</p>
@@ -478,61 +488,67 @@
         </div>
     </section>
 
+    <!-- 4. GALLERY TABS SECTION -->
     <section id="gallery">
         <h2>Life at the Café</h2>
         <p>“በዋሴ ካፌ ፍቅር በኩባያ ይቀርባል!”<br>“እዚህ ዋሴ ካፌ ውስጥ እያንዳንዱ ደንበኛችን እንግዳ ሳይሆን የቤተሰባችን አካል ነው።”<br>“ጥሩ ቀን የሚጀምረው በዋሴ ጥሩ ቡና ነው”</p>
         
         <div class="tab-container">
+            <!-- Tabs Menu Header Bar -->
             <div class="tab-buttons">
                 <button class="tab-btn active" onclick="openTab(event, 'exterior')">Exterior Design</button>
                 <button class="tab-btn" onclick="openTab(event, 'seating')">Customer Seating</button>
                 <button class="tab-btn" onclick="openTab(event, 'events')">Live Events</button>
             </div>
 
+            <!-- Content Area 1 -->
             <div id="exterior" class="tab-content active">
                 <div class="tab-title-above">Exterior Design</div>
                 <div class="tab-image-wrapper">
-                    <img src="FIT.jpg" alt="Cafe exterior design">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600" alt="Cafe exterior design">
                 </div>
             </div>
 
+            <!-- Content Area 2 -->
             <div id="seating" class="tab-content">
                 <div class="tab-title-above">Customer Seating</div>
                 <div class="tab-image-wrapper">
-                    <img src="TT.jpg" alt="Customer seating area">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Customer seating area">
                 </div>
             </div>
 
+            <!-- Content Area 3 -->
             <div id="events" class="tab-content">
                 <div class="tab-title-above">Live Acoustic Events</div>
                 <div class="tab-image-wrapper">
-                    <img src="SS.jpg" alt="Special events at cafe">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600" alt="Special events at cafe">
                 </div>
             </div>
         </div>
     </section>
 
-   <section id="team">
+   <!-- 5. STAFF/TEAM SECTION -->
+    <section id="team">
         <h2>Meet Our Team</h2>
         <p>The talented hands and smiling faces that make your experience unforgettable.</p>
 
         <div class="team-grid">
             <div class="team-member">
-                <img src="5.jpeg" alt="General Manager">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="General Manager">
                 <h3>ዋሲሁን ታደለ</h3>
                 <p>General Manager</p>
                 <p style="font-size:0.85rem; margin-top:5px;">Keeping everything running smoothly with a bright smile.</p>
             </div>
 
             <div class="team-member">
-                <img src="4.jpeg" alt="Head Chef">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=150" alt="Head Chef">
                 <h3>ጌጠ መኮንን</h3>
                 <p>Head Chef</p>
                 <p style="font-size:0.85rem; margin-top:5px;">Culinary mastermind behind our signature stews and pastries.</p>
             </div>
 
             <div class="team-member">
-                <img src="4.jpeg" alt="Lead Waiter">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" alt="Lead Waiter">
                 <h3>ኤፍራታ ግርማ</h3>
                 <p>Lead Barista / Waiter</p>
                 <p style="font-size:0.85rem; margin-top:5px;">Crafting perfect latte art patterns and delivering warmth.</p>
@@ -540,6 +556,7 @@
         </div>
     </section>
 
+    <!-- 6. CONTACT & ORDER SECTION -->
     <section id="contact">
         <h2>Order From Wase Cafe</h2>
         <p>Place your food or drink order easily from your table. Fast service • Fresh food • Warm coffee ☕</p>
@@ -549,6 +566,7 @@
             <p>✉️ Email: <a href="mailto:hello@cafewase.com">hello@cafewase.com</a></p>
         </div>
 
+        <!-- ORDER FORM -->
         <div style="max-width:500px; margin:30px auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.2); text-align:left;">
             <form>
                 <label style="color:#333; font-weight:bold;">Customer Name</label><br>
@@ -580,6 +598,7 @@
         </div>
     </section>
 
+    <!-- JAVASCRIPT TO HANDLE TAB ACTION SWITCHES -->
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
